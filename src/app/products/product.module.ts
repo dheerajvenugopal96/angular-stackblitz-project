@@ -4,6 +4,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { RouterModule } from '@angular/router';
 import { ProductsComponent } from './products.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+
 import { ProductEditTagsComponent } from './product-edit/product-edit-tags.component';
 import { ConvertToSpaces } from '../shared/convertToSpaces.pipe';
 import { ProductEditInfoComponent } from './product-edit/product-edit-info.component';

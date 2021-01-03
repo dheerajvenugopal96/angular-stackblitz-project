@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './products/product.module';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   declarations: [AppComponent, routingComponents, LoginComponent],
   imports: [AppRoutingModule, BrowserModule, HttpClientModule,ProductModule],
