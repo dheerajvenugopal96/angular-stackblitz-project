@@ -1,4 +1,28 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand">{{ title }}</a>
+  <ul class="nav nav-pills">
+    <li><a [routerLink]="['/welcome']">Home</a></li>
+    <li style="margin-left: 20px">
+      <a [routerLink]="['/productList']">Product List</a>
+    </li>
+    <li style="margin-left: 20px">
+      <a [routerLink]="['/productList', '0', 'edit']">Add Product</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="isLoggedIn">Welcome {{ userName }}</a>
+    </li>
+    <li class="nav-item" *ngIf="!isLoggedIn">
+      <a [routerLink]="['/login']" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class="nav-link" routerLinkActive="active" (click)="logout()"
+        >Log Out</a
+      >
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

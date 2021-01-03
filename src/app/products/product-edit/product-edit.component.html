@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="wizard">
+      <a [routerLink]="['info']"> Basic Information </a>
+      <a [routerLink]="['tags']"> Search Tags </a>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

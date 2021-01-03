@@ -1,0 +1,50 @@
+<div class="card" *ngIf="product">
+  <div class="card-header">
+    Product detail : {{ id }} : {{ product.productName }}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-8">
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td>{{ product.productName }}</td>
+          </tr>
+          <tr>
+            <td>Product Code:</td>
+            <td>
+              {{ product.productCode | lowercase | convertTospaces: '-' }}
+            </td>
+          </tr>
+          <tr>
+            <td>Available:</td>
+            <td>{{ product.releaseDate }}</td>
+          </tr>
+          <tr>
+            <td>price:</td>
+            <td>{{ product.price | currency: 'USD':'symbol':'1.2-2' }}</td>
+          </tr>
+          <tr>
+            <td>Rating:</td>
+            <td><app-star [starRating]="product.starRating"></app-star></td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td>{{ product.description }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <img
+          [src]="product.imageUrl"
+          [title]="product.productName"
+          [style.width.px]="225"
+          [style.height.px]="225"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary" (click)="goBack()">< Back</button>
+  </div>
+</div>
