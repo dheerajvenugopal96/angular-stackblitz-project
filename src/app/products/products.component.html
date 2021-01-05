@@ -26,7 +26,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of filteredProducts">
-            <td><img *ngIf="showImage" [src]="product.imageUrl" /></td>
+            <td><img *ngIf="showImage" [src]="product.imageUrl" alt="Failed to load Image"/></td>
             <td>
               <a [routerLink]="['/productList', product.productId]">{{
                 product.productName
